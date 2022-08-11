@@ -1,0 +1,11 @@
+﻿TOPIC
+	about_PSCloudCommunicationReport
+	
+SHORT DESCRIPTION
+	Explains how to use the PSCloudCommunicationReport powershell module
+	
+LONG DESCRIPTION
+	<Insert Content here>
+
+KEYWORDS
+	PSCloudCommunicationReport

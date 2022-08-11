@@ -1,0 +1,22 @@
+﻿
+# ignore the settings folder and files for VSCode and PSS
+.vscode/*
+*.psproj
+*TempPoint*
+
+# Ignore staging info from Visual Studio
+library/PSCloudCommunicationReport/.vs/*
+library/PSCloudCommunicationReport/PSCloudCommunicationReport/bin/*
+library/PSCloudCommunicationReport/PSCloudCommunicationReport/obj/*
+
+# ignore PowerShell Studio MetaData
+PSCloudCommunicationReport/PSCloudCommunicationReport.psproj
+PSCloudCommunicationReport/PSCloudCommunicationReport.psproj.bak
+PSCloudCommunicationReport/PSCloudCommunicationReport.psprojs
+PSCloudCommunicationReport/PSCloudCommunicationReport.psproj
+
+# ignore the TestResults
+TestResults/*
+
+# ignore the publishing Directory
+publish/*

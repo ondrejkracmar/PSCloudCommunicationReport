@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C35FC597-552A-4EDD-A7BB-74126D3AC70D}") = "PSCloudCommunicationReport", "PSCloudCommunicationReport\PSCloudCommunicationReport.csproj", "{17689EE0-3B27-4561-A7B1-A2BD2A3126A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17689EE0-3B27-4561-A7B1-A2BD2A3126A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17689EE0-3B27-4561-A7B1-A2BD2A3126A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17689EE0-3B27-4561-A7B1-A2BD2A3126A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17689EE0-3B27-4561-A7B1-A2BD2A3126A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3350C94-445A-4B72-A8CD-7D6ADBF4776D}
+	EndGlobalSection
+EndGlobal
