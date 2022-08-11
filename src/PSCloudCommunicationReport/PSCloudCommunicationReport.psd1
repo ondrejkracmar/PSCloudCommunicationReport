@@ -27,6 +27,7 @@
 	# this module
 	RequiredModules = @(
 		@{ ModuleName='PSFramework'; ModuleVersion='1.7.237' }
+		@{ ModuleName='RestConnect'; ModuleVersion='1.0.10' }
 	)
 	
 	# Assemblies that must be loaded prior to importing this module
@@ -63,7 +64,7 @@
 		PSData = @{
 			
 			# Tags applied to this module. These help with module discovery in online galleries.
-			# Tags = @()
+			Tags = @('rest','Azure')
 			
 			# A URL to the license for this module.
 			# LicenseUri = ''
