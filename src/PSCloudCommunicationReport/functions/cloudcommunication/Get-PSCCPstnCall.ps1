@@ -1,4 +1,4 @@
-﻿function Get-PSCCTeamsPstnCall {
+﻿function Get-PSCCPstnCall {
     <#
         .SYNOPSIS
         Retrieves PSTN calls between a specified start and end date.
@@ -6,8 +6,6 @@
         .DESCRIPTION
         Uses Teams cloud communications Graph API call to retrieve PSTN usage data.
         Requires an Azure application registration with CallRecords.Read.PstnCalls permissions and Graph API access token.
-
-        .OUTPUTS
 
         .PARAMETER StartDate
         The start date to search for records.
@@ -22,18 +20,18 @@
         Value of returned result set contains multiple pages of data.
 
         .EXAMPLE
-        Get-TeamsPstnCalls -StartDate 2020-03-01 -EndDate 2020-03-31
+        Get-PSCCPstnCall -StartDate 2020-03-01 -EndDate 2020-03-31
 
         This example retrieves PSTN usage records between 2020-03-01 and 2020-03-31 use an access token
         saved to the variable $accessToken.
 
         .EXAMPLE
-        Get-TeamsPstnCalls -Days 7 -AccessToken $accessToken
+        Get-PSCCPstnCall -Days 7 -AccessToken $accessToken
 
         This example retrieves PSTN usage records for the previous 7 days using an access token saved
         to the variable $accessToken.
     #>
-
+    [OutputType('PSCloudCommunication.Report.PstnCall')]
     [CmdletBinding(DefaultParameterSetName = 'DateRange')]
     param (
         [Parameter(Mandatory = $True, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'DateRange')]

@@ -22,7 +22,7 @@ function ConvertFrom-RestTeamsDirectRoutingCall {
     process {
         
         [PSCustomObject]@{
-            PSTypeName                    = 'PSCloudCommunication.Report.TeamsDirectRoutingCall'
+            PSTypeName                    = 'PSCloudCommunication.Report.DirectRoutingCall'
             Id                            = $InputObject.id
             CorrelationId                 = $InputObject.correlationId
             UserId                        = $InputObject.userId

@@ -42,8 +42,8 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSCloudCommunicationReport',
-		'Get-PSCCTeamsDirectRoutingCall',
-		'Get-PSCCTeamsPstnCall'
+		'Get-PSCCDirectRoutingCall',
+		'Get-PSCCPstnCall'
 	)
 	
 	# Cmdlets to export from this module
