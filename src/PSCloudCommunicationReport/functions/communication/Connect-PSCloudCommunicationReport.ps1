@@ -1,4 +1,4 @@
-function Connect-PSCloudCommunicationReport {
+﻿function Connect-PSCloudCommunicationReport {
 	<#
 	.SYNOPSIS
 		Connect to the Azure AD object via Microsoft Graph API
@@ -70,12 +70,12 @@ function Connect-PSCloudCommunicationReport {
 		These tokens are deprecated and should be avoided, but not every migration can be accomplished instantaneously...
 	
 	.EXAMPLE
-		PS C:\> Connect-PSAzureADDirectory -ClientID $clientID -TenantID $tenantID -TenantName contoso -Certificate $cert
+		PS C:\> Connect-PSCloudCommunicationReport -ClientID $clientID -TenantID $tenantID -TenantName contoso -Certificate $cert
 
 		Connect to the specified tenant using a certificate
 
 	.EXAMPLE
-		PS C:\> Connect-PSAzureADDirectory -ClientID $clientID -TenantID $tenantID -TenantName contoso -DeviceCode
+		PS C:\> Connect-PSCloudCommunicationReporty -ClientID $clientID -TenantID $tenantID -TenantName contoso -DeviceCode
 
 		Connect to the specified tenant using the DeviceCode flow
 	#>
