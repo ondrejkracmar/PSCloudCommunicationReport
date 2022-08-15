@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 # https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu#2004-
 
 # Download the powershell '.tar.gz' archive
-RUN curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/powershell-7.2.5-linux-x64.tar.gz
+RUN curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 RUN mkdir -p /opt/microsoft/powershell/7
@@ -34,7 +34,7 @@ RUN ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 RUN useradd --create-home vscode
 
-RUN wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v8.26.1/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+RUN wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v8.30.0/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 RUN chmod +x /usr/local/bin/oh-my-posh
 
 RUN apt-get update;apt-get install openssh-client -y
