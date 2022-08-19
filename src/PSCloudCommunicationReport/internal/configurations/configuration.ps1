@@ -13,8 +13,8 @@ Set-PSFConfig -Module 'PSCloudCommunicationReport' -Name 'Example.Setting' -Valu
 
 $script:ModuleName = 'PSCloudCommunicationReport'
 
-Set-PSFConfig -Module 'PSCloudCommunicationReport' -Name 'Import.DoDotSource' -Value $false -Initialize -Validation 'bool' -Description "Whether the module files should be dotsourced on import. By default, the files of this module are read as string value and invoked, which is faster but worse on debugging."
-Set-PSFConfig -Module 'PSCloudCommunicationReport' -Name 'Import.IndividualFiles' -Value $false -Initialize -Validation 'bool' -Description "Whether the module files should be imported individually. During the module build, all module code is compiled into few files, which are imported instead by default. Loading the compiled versions is faster, using the individual files is easier for debugging and testing out adjustments."
+Set-PSFConfig -Module $script:ModuleName -Name 'Import.DoDotSource' -Value $false -Initialize -Validation 'bool' -Description "Whether the module files should be dotsourced on import. By default, the files of this module are read as string value and invoked, which is faster but worse on debugging."
+Set-PSFConfig -Module $script:ModuleName -Name 'Import.IndividualFiles' -Value $false -Initialize -Validation 'bool' -Description "Whether the module files should be imported individually. During the module build, all module code is compiled into few files, which are imported instead by default. Loading the compiled versions is faster, using the individual files is easier for debugging and testing out adjustments."
 
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiVersion' -Value "v1.0" -Initialize -Validation 'string' -Description "What version of Graph API module is useing."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiUrl' -Value "https://graph.microsoft.com" -Initialize -Validation 'string' -Description "What url of Graph API module is useing."
