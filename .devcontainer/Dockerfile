@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 # https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu#2004-
 
 # Download the powershell '.tar.gz' archive
-RUN curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-x64.tar.gz
+RUN curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 RUN mkdir -p /opt/microsoft/powershell/7
@@ -50,6 +50,22 @@ RUN curl -Lo /tmp/bicep https://github.com/Azure/bicep/releases/${BICEP_VERSION}
 # Switch to non-root user:
 WORKDIR /home/vscode
 USER vscode
+
+RUN mkdir ~/.poshthemes
+RUN wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+RUN unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+RUN chmod u+rw ~/.poshthemes/*.omp.*
+RUN rm ~/.poshthemes/themes.zip
+
+RUN mkdir ~/.dotfiles
+RUN wget https://github.com/ondrejkracmar/dotfiles/releases/download/v1.0.0/dotfiles.zip -O ~/.dotfiles/dotfiles.zip
+RUN unzip ~/.dotfiles/dotfiles.zip -d ~/.dotfiles
+RUN chmod u+rwx ~/.dotfiles/*install*
+RUN rm ~/.dotfiles/dotfiles.zip
+#RUN ~/.dotfiles/install.sh
+
+SHELL ["pwsh","-NoProfile", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+RUN ~/.dotfiles/install.ps1
 
 # Not needed when using dotfiles
 # SHELL ["pwsh","-NoProfile", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
