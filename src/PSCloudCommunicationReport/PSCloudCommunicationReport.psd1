@@ -78,7 +78,7 @@
 			
 			# ReleaseNotes of this module
 			# ReleaseNotes = ''
-			
+			ExternalModuleDependencies = @("PSFramework",  "RestConnect")
 		} # End of PSData hashtable
 		
 	} # End of PrivateData hashtable
