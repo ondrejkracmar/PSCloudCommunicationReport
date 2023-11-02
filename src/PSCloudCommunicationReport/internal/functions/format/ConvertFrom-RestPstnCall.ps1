@@ -7,7 +7,7 @@
 		    Converts Pstn Call objects to look nice.
 
 	    .PARAMETER InputObject
-		    The rest response representing a Microsoft 365 Usage report
+		    The rest response representing a Pstn Call
 
 	    .EXAMPLE
 		    PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
