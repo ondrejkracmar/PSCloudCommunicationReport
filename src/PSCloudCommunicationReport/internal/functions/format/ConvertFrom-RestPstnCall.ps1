@@ -11,7 +11,7 @@
 
 	    .EXAMPLE
 		    PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
-        
+
             Retrieves the specified Pstn Call and converts it into something userfriendly
 	#>
     [CmdletBinding()]
