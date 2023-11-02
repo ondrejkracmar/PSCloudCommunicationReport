@@ -10,7 +10,7 @@
 		The rest response representing a Microsoft 365 Usage report
 
 	.EXAMPLE
-		PS C:\>  Invoke-RestRequest -Service graph -Path (communications/callRecords/getDirectRoutingCalls(fromDateTime={0},toDateTime={1}) -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestTeamsDirectRoutingCall
+		PS C:\> Invoke-RestRequest -Service graph -Path (communications/callRecords/getDirectRoutingCalls(fromDateTime={0},toDateTime={1}) -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestTeamsDirectRoutingCall
 		Retrieves the specified Microsoft 365 Usage report and converts it into something userfriendly
 	#>
     [CmdletBinding()]
