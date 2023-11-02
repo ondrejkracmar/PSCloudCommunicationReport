@@ -1,17 +1,18 @@
 ﻿function ConvertFrom-RestPstnCall {
     <#
-	.SYNOPSIS
-		Converts Pstn Call objects to look nice.
+	    .SYNOPSIS
+		    Converts Pstn Call objects to look nice.
 
-	.DESCRIPTION
-		Converts Pstn Call objects to look nice.
+	    .DESCRIPTION
+		    Converts Pstn Call objects to look nice.
 
-	.PARAMETER InputObject
-		The rest response representing a Microsoft 365 Usage report
+	    .PARAMETER InputObject
+		    The rest response representing a Microsoft 365 Usage report
 
-	.EXAMPLE
-		PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
-		Retrieves the specified Pstn Call and converts it into something userfriendly
+	    .EXAMPLE
+		    PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
+        
+            Retrieves the specified Pstn Call and converts it into something userfriendly
 	#>
     [CmdletBinding()]
     param (
