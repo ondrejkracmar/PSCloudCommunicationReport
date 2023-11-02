@@ -1,5 +1,5 @@
 ﻿function ConvertFrom-RestPstnCall {
-	<#
+    <#
 	.SYNOPSIS
 		Converts Microsoft 365 Usage report objects to look nice.
 
@@ -23,30 +23,29 @@
 
         [PSCustomObject]@{
             PSTypeName         = 'PSCloudCommunication.Report.PstnCall'
-            Id = $InputObject.id
-            CallId = $InputObject.callId
-            UserId = $InputObject.userId
-            UserPrincipalName = $InputObject.userPrincipalName
-            UserDisplayName = $InputObject.userDisplayName
-            StartDateTime = $InputObject.startDateTime
-            EndDateTime = $InputObject.endDateTime
-            Duration = $InputObject.duration
-            Charge = $InputObject.charge
-            CallType = $InputObject.callType
-            Currency = $InputObject.currency
-            CalleeNumber = $InputObject.calleeNumber
-            UsageCountryCode = $InputObject.usageCountryCode
-            TenantCountryCode = $InputObject.tenantCountryCode
-            ConnectionCharge = $InputObject.connectionCharge
-            CallerNumber = $InputObject.callerNumber
+            Id                 = $InputObject.id
+            CallId             = $InputObject.callId
+            UserId             = $InputObject.userId
+            UserPrincipalName  = $InputObject.userPrincipalName
+            UserDisplayName    = $InputObject.userDisplayName
+            StartDateTime      = $InputObject.startDateTime
+            EndDateTime        = $InputObject.endDateTime
+            Duration           = $InputObject.duration
+            Charge             = $InputObject.charge
+            CallType           = $InputObject.callType
+            Currency           = $InputObject.currency
+            CalleeNumber       = $InputObject.calleeNumber
+            UsageCountryCode   = $InputObject.usageCountryCode
+            TenantCountryCode  = $InputObject.tenantCountryCode
+            ConnectionCharge   = $InputObject.connectionCharge
+            CallerNumber       = $InputObject.callerNumber
             DestinationContext = $InputObject.destinationContext
-            DestinationName = $InputObject.destinationName
-            ConferenceId = $InputObject.conferenceId
-            LicenseCapability = $InputObject.licenseCapability
-            InventoryType = $InputObject.inventoryType
-            Operator = $InputObject.operator
+            DestinationName    = $InputObject.destinationName
+            ConferenceId       = $InputObject.conferenceId
+            LicenseCapability  = $InputObject.licenseCapability
+            InventoryType      = $InputObject.inventoryType
+            Operator           = $InputObject.operator
             CallDurationSource = $InputObject.callDurationSource
         }
-
     }
 }
