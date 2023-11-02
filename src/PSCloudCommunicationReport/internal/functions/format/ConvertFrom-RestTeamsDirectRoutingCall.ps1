@@ -2,13 +2,13 @@
     <#
 	.SYNOPSIS
 		Converts Teams Direct Routing Call to look nice.
-	
+
 	.DESCRIPTION
 		Converts Teams Direct Routing Call to look nice.
-	
+
 	.PARAMETER InputObject
 		The rest response representing a Teams Direct Routing Call
-	
+
 	.EXAMPLE
 		PS C:\>  Invoke-RestRequest -Service graph -Path (communications/callRecords/getDirectRoutingCalls(fromDateTime={0},toDateTime={1}) -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get  | ConvertFrom-RestPstnCall
 		Retrieves the specified Teams Direct Routing Call and converts it into something userfriendly
@@ -20,7 +20,7 @@
     )
 
     process {
-        
+
         [PSCustomObject]@{
             PSTypeName                    = 'PSCloudCommunication.Report.DirectRoutingCall'
             Id                            = $InputObject.id

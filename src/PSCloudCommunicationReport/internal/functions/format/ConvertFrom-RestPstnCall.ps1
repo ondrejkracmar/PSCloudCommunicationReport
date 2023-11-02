@@ -2,15 +2,15 @@
     <#
 	.SYNOPSIS
 		Converts Pstn Calls to look nice.
-	
+
 	.DESCRIPTION
 		Converts Pstn Calls to look nice.
-	
+
 	.PARAMETER InputObject
 		The rest response representing a Pstn Calls
-	
+
 	.EXAMPLE
-		PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
+	    PS C:\> Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
 		Retrieves the specified Pstn Calls and converts it into something userfriendly
 	#>
     [CmdletBinding()]
@@ -20,7 +20,7 @@
     )
 
     process {
-        
+
         [PSCustomObject]@{
             PSTypeName         = 'PSCloudCommunication.Report.PstnCall'
             Id = $InputObject.id
@@ -47,6 +47,6 @@
             Operator = $InputObject.operator
             CallDurationSource = $InputObject.callDurationSource
         }
-        
+
     }
 }
