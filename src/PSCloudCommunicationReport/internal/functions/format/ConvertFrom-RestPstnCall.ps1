@@ -1,4 +1,4 @@
-function ConvertFrom-RestPstnCall {
+﻿function ConvertFrom-RestPstnCall {
     <#
 	.SYNOPSIS
 		Converts Pstn Calls to look nice.

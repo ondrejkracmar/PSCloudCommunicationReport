@@ -1,4 +1,4 @@
-function ConvertFrom-RestTeamsDirectRoutingCall {
+﻿function ConvertFrom-RestTeamsDirectRoutingCall {
     <#
 	.SYNOPSIS
 		Converts Teams Direct Routing Call to look nice.
