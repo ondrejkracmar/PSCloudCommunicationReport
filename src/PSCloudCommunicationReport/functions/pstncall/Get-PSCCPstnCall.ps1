@@ -16,9 +16,6 @@
         .PARAMETER Days
         The previous number of days to search for records.
 
-        .PARAMETER PageSize
-        Value of returned result set contains multiple pages of data.
-
         .EXAMPLE
         Get-PSCCPstnCall -StartDate 2020-03-01 -EndDate 2020-03-31
 
@@ -43,13 +40,7 @@
         [Parameter(Mandatory = $True, ParameterSetName = 'NumberDays')]
         [ValidateRange(1, 90)]
         [int]
-        $Days,
-        [Parameter(Mandatory = $false, ParameterSetName = 'DateRange')]
-        [Parameter(Mandatory = $false, ParameterSetName = 'NumberDays')]
-        [ValidateNotNullOrEmpty()]
-        [ValidateRange(1, 999)]
-        [int]
-        $PageSize = 100
+        $Days
     )
 
     begin {
@@ -57,8 +48,10 @@
         $query = @{
             '$select' = ((Get-PSFConfig -Module $script:ModuleName -Name Settings.GraphApiQuery.Select.PstnCalls).Value -join ',')
             '$count'  = 'true'
-            '$top'    = $PageSize
+            '$top'    = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.PageSize' -f $script:ModuleName)
         }
+        $commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
+        $commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitIsSeconds' -f $script:ModuleName))
     }
     process {
         switch ($PSCmdlet.ParameterSetName) {
@@ -72,10 +65,12 @@
                 $toDateTimeString = Get-Date -Date $toDateTime -Format yyyy-MM-dd
                 $fromDateTime = $today.AddDays( - ($Days - 1))
                 $fromDateTimeString = Get-Date -Date $fromDateTime -Format yyyy-MM-dd
-                    
+
             }
         }
-        Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
+        Invoke-PSFProtectedCommand -ActionString 'Report.Get' -ActionStringValues 'PstnCal' -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
+            Invoke-RestRequest -Service 'graph' -Path ('communications/callRecords/getPstnCalls(fromDateTime={0},toDateTime={1})' -f $fromDateTimeString, $toDateTimeString) -Query $query -Method Get | ConvertFrom-RestPstnCall
+        } -EnableException $EnableException -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
     }
     end {}
 }

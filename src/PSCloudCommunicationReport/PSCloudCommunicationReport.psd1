@@ -3,7 +3,7 @@
 	RootModule        = 'PSCloudCommunicationReport.psm1'
 	
 	# Version number of this module.
-	ModuleVersion     = '0.0.9'
+	ModuleVersion     = '1.0.0.1'
 	
 	# ID used to uniquely identify this module
 	GUID              = 'a069a4e9-1b68-4a04-b2a4-fc56095ebcb6'

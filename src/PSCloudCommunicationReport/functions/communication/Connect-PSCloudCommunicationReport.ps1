@@ -138,7 +138,7 @@
 	begin {
 		$param = $PSBoundParameters | ConvertTo-PSFHashtable -ReferenceCommand Connect-RestService
 		$param.Service = 'graph'
-		$param.ServiceUrl = Get-GraphApiUriPath
+		$param.ServiceUrl = Get-GraphApiUriPath -GraphApiVersion (Get-GraphAPIVersion)
 	}
 
 	process {
